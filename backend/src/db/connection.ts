@@ -7,7 +7,7 @@ if (!process.env.MONGO_URI) {
 }
 const mongoUri : string = process.env.MONGO_URI
 
-export const connectDb = async function () {
+const connectDb = async function () {
     try {
         await mongoose.connect(mongoUri)
         console.log('db connected successfully');
@@ -17,3 +17,5 @@ export const connectDb = async function () {
         
     }
 }
+
+export {connectDb}
